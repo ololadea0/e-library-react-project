@@ -1,0 +1,53 @@
+.about-container,
+.contact-container {
+  max-width: 800px;
+  margin: 79px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .about-container,
+  .contact-container {
+    margin: 100px 12px;
+    padding: 18px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-container,
+  .contact-container {
+    margin: 80px 8px;
+    padding: 12px;
+  }
+}
+
+.about-container p {
+  line-height: 1.2cm;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+.contact-form a {
+  color: #33b233;
+}

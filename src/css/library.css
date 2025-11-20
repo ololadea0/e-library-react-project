@@ -1,0 +1,122 @@
+.library-page {
+  margin: 100px 0 20px;
+}
+.library-page header {
+  text-align: center;
+  margin-top: 2rem;
+}
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  width: 90%; /* changed from 60% */
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 6px;
+  position: relative; /* for absolute positioning of dropdown */
+}
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.search-bar select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  background: #fff;
+  cursor: pointer;
+  width: 30%;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.search-bar input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 0 6px 6px 0;
+  outline: none;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  width: 70%;
+  flex: 1;
+}
+
+.search-bar input:focus,
+.search-bar select:focus {
+  border-color: #007f3d;
+}
+
+/* Make the dropdown overlap other content instead of pushing it */
+.search-results {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.search-results ul {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+
+.search-results li {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.search-results li:hover {
+  background-color: #f7f7f7;
+}
+
+.no-match {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 640px) {
+  .search-bar {
+    width: 95%;
+  }
+  .search-bar select {
+    width: 35%;
+  }
+  .search-bar input {
+    width: 65%;
+  }
+}
+
+/* Enhanced scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered fade-in animation for book cards */
+.fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+  transition-delay: 0s;
+}
+.fade-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

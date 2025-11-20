@@ -1,0 +1,19 @@
+.category-page {
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 100px auto 20px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.category-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Poppins Regular";
+}
+.no-books {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 50px;
+}

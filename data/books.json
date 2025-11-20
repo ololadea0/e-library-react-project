@@ -1,0 +1,108 @@
+{
+  "books": [
+    {
+      "id": "2",
+      "title": "Fortress of the Muslim",
+      "author": "Sa'id bin Wahf Al-Qahtani",
+      "category": "Adhkaar",
+      "language": "English",
+      "description": "A collection of authentic supplications from the Qur'an and Sunnah, widely used by Muslims worldwide.",
+      "longDescription": "Fortress of the Muslim is a comprehensive compilation of authentic supplications and remembrances derived from the Qur'an and the Sunnah of the Prophet Muhammad (peace be upon him). Authored by Sa'id bin Wahf Al-Qahtani, this book serves as a spiritual guide for Muslims, providing them with a rich resource of prayers for various occasions and situations in daily life. The supplications are categorized for ease of use, covering topics such as morning and evening remembrances, prayers for protection, seeking forgiveness, and more. This work is highly regarded for its authenticity and has become a staple in the devotional practices of Muslims around the world.",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1762168548/jcygpqsyq7t78uls4nnt.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1762168568698_fortress_of_the_muslim.pdf"
+    },
+    {
+      "id": "4",
+      "title": "The Tangible proofs for Allah's Existence",
+      "author": "Sheikh Muhammad Metwalli al-Sha'rawi",
+      "category": "Aqeedah",
+      "language": "English",
+      "description": "A concise work that demonstrates the undeniable existence of Allah through logical and scriptural evidence",
+      "longDescription": "The Tangible Proofs for Allah's Existence by Sheikh Muhammad Metwalli al-Sha'rawi is a profound exploration of the evidence supporting the existence of Allah. This book delves into various logical arguments and scriptural references from the Qur'an and Hadith to present a compelling case for the belief in a singular, omnipotent Creator. Sheikh al-Sha'rawi, known for his eloquent and accessible style, guides readers through complex theological concepts, making them understandable for a broad audience. The work serves as both a reaffirmation of faith for believers and a thoughtful discourse for those seeking to understand Islamic perspectives on the existence of God.",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1762168597/c7fnbk3nm33tlc4u1ydm.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1762168617859_The%20Tangible%20proofs%20for%20Allah's%20Existence.pdf"
+    },
+    {
+      "id": "5",
+      "title": "Stories of the Prophets",
+      "author": "Ibn Kathir",
+      "category": "History",
+      "language": "English",
+      "description": "An authentic narration of the lives of the Prophets, based on Qur'an and Sunnah, by the great scholar Ibn Kathir.",
+      "longDescription": "Stories of the Prophets by Ibn Kathir is a comprehensive collection of narratives detailing the lives and missions of various prophets mentioned in Islamic tradition. Drawing from the Qur'an, Hadith, and earlier historical sources, Ibn Kathir presents these stories in a manner that highlights the moral and spiritual lessons they convey. The book covers prophets such as Adam, Noah, Abraham, Moses, Jesus, and Muhammad (peace be upon them all), providing insights into their challenges, triumphs, and unwavering faith in Allah. This work is highly regarded for its authenticity and depth, making it an essential read for those interested in Islamic history and the exemplary lives of the prophets.",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1762168660/dyzjwv5pqgmbpyvwchul.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1762168678188_Stories%20Of%20The%20Prophets%20By%20Ibn%20Kathir.pdf"
+    },
+    {
+      "id": "7",
+      "title": "Sharh Arba'eenan Nawawî",
+      "author": "Imam An-Nawawi, Dr. Jamal Ahmed Badi",
+      "category": "Hadith",
+      "language": "English",
+      "description": "A famous collection of authentic hadith compiled by Imam An-Nawawi, covering various aspects of Islamic teachings.",
+      "longDescription": "Sharh Arba'eenan Nawawî is a renowned collection of forty hadiths compiled by Imam An-Nawawi, one of the most respected scholars in Islamic history. This book provides a detailed explanation and commentary on each hadith, elucidating their meanings and implications for daily life. The hadiths cover a wide range of topics including faith, worship, ethics, and social conduct, making it an essential resource for Muslims seeking to deepen their understanding of Islamic teachings. Dr. Jamal Ahmed Badi's insightful commentary further enhances the reader's comprehension, making this work accessible to both scholars and laypersons alike.",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1762168368/zbd3upswugemkzvveujt.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1762168492930_40%20Annabawiy%20Collection.pdf"
+    },
+    {
+      "id": "1761901588991",
+      "title": "The Evolution of Fiqh (Islamic Law & The Madh-habs)",
+      "author": "Abu Ameenah Bilal Philips",
+      "description": "A brief yet insightful overview of how Islamic law and the four madh-habs developed through history.",
+      "longDescription": "The Evolution of Fiqh by Abu Ameenah Bilal Philips provides a comprehensive overview of the development of Islamic jurisprudence from its inception during the time of the Prophet Muhammad (peace be upon him) to the present day. The book delves into the historical context that led to the formation of the four major Sunni madh-habs: Hanafi, Maliki, Shafi'i, and Hanbali. It explores the reasons behind the differences in legal rulings among these schools of thought and highlights the underlying unity in their principles. Through clear explanations and insightful analysis, Bilal Philips sheds light on how Islamic scholars have approached legal issues over the centuries, adapting to changing circumstances while remaining rooted in the core teachings of Islam. This work is an essential resource for anyone seeking to understand the foundations and evolution of Islamic law.",
+      "category": "Fiqh",
+      "language": "English",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1761901579/hapgsucjueox38puul4s.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1761901587182_The%20Evolution%20of%20Fiqh.pdf"
+    },
+    {
+      "id": "1762176377258",
+      "title": "Tafseer Ibn Katheer Juz Amma ",
+      "author": "Ibn Kathir, Sameh Strauch",
+      "description": "A concise explanation of the Qur’an’s final chapters, offering Ibn Katheer’s profound insights into faith, morality, and guidance for daily life.",
+      "longDescription": "Tafseer Ibn Katheer – Juz ‘Amma presents the timeless commentary of the renowned 14th-century scholar, Imam Ibn Katheer, on the final section of the Qur’an (Juz ‘Amma). This part of the Qur’an, often recited in daily prayers, contains short yet powerful chapters that focus on the fundamentals of faith, the reality of the Hereafter, moral guidance, and spiritual reflection.\nIn this work, Ibn Katheer provides clear explanations of each verse, supported by authentic hadiths and interpretations from the early generations of Muslims. His tafseer combines linguistic precision, historical context, and deep theological insight—making it both accessible to students of knowledge and valuable to everyday readers seeking a deeper understanding of the Qur’an’s message.\nThis edition serves as an excellent introduction to Qur’anic exegesis, offering readers a window into classical Islamic scholarship and the enduring relevance of Allah’s final revelation.",
+      "category": "Tafsir",
+      "language": "English",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1762176358/x3rgt3mv34eetostmje1.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1762176367341_juz_amma_ibn_katheer.pdf"
+    },
+    {
+      "id": "1763659347328",
+      "title": "Ar-Raheeq Al-Makhtum (The Sealed Nectar)",
+      "author": " Saifur Rahman al-Mubarakpuri",
+      "description": "A clear, authentic biography of Prophet Muhammad (peace be upon him), summarizing his life, mission, and character in a simple, engaging way.",
+      "longDescription": "Ar-Raheeq Al-Makhtum (The Sealed Nectar) is a comprehensive and highly respected biography of Prophet Muhammad (peace be upon him), written with clarity and supported by authentic historical sources. It traces his life in full detail—beginning with the social and political landscape of Arabia, moving through his birth, early years, prophethood, persecution in Makkah, migration to Madinah, major battles, treaties, and the establishment of the first Muslim state. The book highlights his noble character, leadership, compassion, and unwavering commitment to conveying the message of Islam. It also provides valuable context that helps readers understand the challenges he faced and the transformation he brought to society. Widely recognized for its balance, accuracy, and readability, it remains one of the most trusted and accessible biographies for students, researchers, and general readers seeking a deeper appreciation of the Prophet’s life and legacy.",
+      "category": "History",
+      "language": "English",
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1763659335/sicekil4zcsnq1bbmwsy.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1763659343225_English_ArRaheeq_AlMakhtum_THE_SEALED_NECTAR.pdf"
+    },
+    {
+      "id": "1763661083735",
+      "title": "Riyad-us-Saliheen",
+      "author": "Imam Yahya ibn Sharaf an-Nawawi",
+      "description": "A collection of authentic sayings and actions of the Prophet Muhammad (peace be upon him) arranged to guide Muslims toward a righteous, moral, and mindful life.",
+      "longDescription": "Riyadh-us-Saliheen (The Gardens of the Righteous) is a comprehensive collection of authentic Hadith compiled by Imam Abu Zakariya Yahya ibn Sharaf An-Nawawi. It brings together sayings, actions, and approvals of the Prophet Muhammad (peace be upon him), carefully organized into thematic chapters covering moral conduct, worship, social interactions, manners, and personal ethics. Designed as a practical guide, it helps Muslims cultivate piety, patience, honesty, humility, and other virtues in daily life. Each Hadith is presented with clarity, emphasizing lessons that strengthen faith, encourage good behavior, and foster harmony within families and society. This work remains a cornerstone for Islamic education and personal spiritual development.",
+      "category": "Hadith",
+      "language": [
+        "English",
+        "Arabic"
+      ],
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1763661065/jqsrwbmjukbwwedxurj2.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1763661072919_en_Riyad_us_Saliheen.pdf"
+    },
+    {
+      "id": "1763664425171",
+      "title": "Usul al‑Ifta wa Adabuhu",
+      "author": "Shaykh Mufti Taqi Usmani",
+      "description": "Usul al-Ifta wa Adabuhu explains the principles and proper manners of giving Islamic legal rulings.",
+      "longDescription": "Usul al-Ifta wa Adabuhu is a structured exploration of how Islamic legal rulings are formed and delivered, laying out the intellectual foundations, responsibilities, and refined character required of anyone issuing fatwas. It explains the qualifications of a mufti, the steps for deriving sound rulings from Qur’an, Sunnah, consensus, and juristic reasoning, and the importance of humility, caution, sincerity, and awareness of people’s circumstances. The book also highlights common pitfalls, ethical boundaries, and the balance between strictness and leniency, aiming to ensure that legal guidance is both rooted in authentic scholarship and delivered with care, wisdom, and integrity.",
+      "category": "Fiqh",
+      "language": [
+        "English"
+      ],
+      "coverImage": "https://res.cloudinary.com/dmxpytmgz/image/upload/v1763664385/jjxl3g00rp3ixpgdv3qe.jpg",
+      "fileUrl": "https://cdmaoihjiqltclcvrrmm.supabase.co/storage/v1/object/public/e-library/pdfs/1763664393029_USUL-AL-IFTAA.pdf"
+    }
+  ]
+}
