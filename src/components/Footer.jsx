@@ -11,7 +11,10 @@ export default function Footer() {
         <div className="top-footer">
           <div className="footer-logo">
             <div className="footer-logo-img">
-              <img src="/img/dn logo.jpeg" alt="E-Library logo" />
+              <img
+                src={`${import.meta.env.BASE_URL}img/dn-logo.jpeg`}
+                alt="E-Library logo"
+              />
             </div>
             <div className="brand">E-Library</div>
             <div className="small">
@@ -42,16 +45,25 @@ export default function Footer() {
         <div>Built with Love ❤️ • </div>
         <div className="socials" aria-label="Social links">
           <a href="https://www.facebook.com/dawahnigeria/">
-            <img src="/img/facebook.png" alt="Facebook" />
+            <img
+              src={`${import.meta.env.BASE_URL}img/facebook.png`}
+              alt="Facebook"
+            />
           </a>
           <a href="https://www.instagram.com/dawahnigeria/">
-            <img src="/img/instagram.png" alt="instagram" />
+            <img
+              src={`${import.meta.env.BASE_URL}img/instagram.png`}
+              alt="instagram"
+            />
           </a>
           <a href="https://x.com/dawahnigeria">
-            <img src="/img/twitter.png" alt="X" />
+            <img src={`${import.meta.env.BASE_URL}img/twitter.png`} alt="X" />
           </a>
           <a href="https://www.youtube.com/dawahnigeria">
-            <img src="/img/youtube.png" alt="youtube" />
+            <img
+              src={`${import.meta.env.BASE_URL}img/youtube.png`}
+              alt="youtube"
+            />
           </a>
         </div>
       </div>

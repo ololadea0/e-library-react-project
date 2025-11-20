@@ -22,7 +22,10 @@ const Navbar = () => {
   return (
     <header className="navbar" role="navigation" aria-label="Main navigation">
       <div className="logo-img">
-        <img src="/img/dn logo.jpeg" alt="Dawah Nigeria Logo" />
+        <img
+          src={`${import.meta.env.BASE_URL}img/dn-logo.jpeg`}
+          alt="Dawah Nigeria Logo"
+        />
       </div>
 
       <button
