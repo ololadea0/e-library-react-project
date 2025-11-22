@@ -1,8 +1,9 @@
 .admin-panel,
 .edit-book,
 .create-book,
-.delete-book {
-  margin: 40px 20px 30px;
+.delete-book,
+.edit-page {
+  margin: 100px auto 30px;
 }
 .admin-links {
   display: flex;
@@ -300,7 +301,7 @@
 }
 .delete-book {
   max-width: 80%;
-  margin: 40px auto;
+  margin: 100px auto;
   padding: 20px;
   background: #fff;
   border: 1px solid #e2e2e2;

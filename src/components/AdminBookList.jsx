@@ -9,7 +9,7 @@ const AdminBookList = ({ books, onEdit }) => {
           {books.map((book) => (
             <div className="admin-book-card" key={book.id}>
               <img
-                src={book.coverImage}
+                src={book.coverimage}
                 alt={book.title}
                 className="admin-book-cover"
               />

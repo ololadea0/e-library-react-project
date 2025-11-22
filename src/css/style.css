@@ -370,3 +370,39 @@ body {
     opacity: 1;
   }
 }
+
+.msg-box {
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  margin-top: 20px;
+  animation: fadeIn 0.2s ease-out;
+  border-left: 4px solid;
+}
+
+/* Success */
+.msg-box.success {
+  background: #e8ffef;
+  color: #0a7a20;
+  border-left-color: #0a7a20;
+}
+
+/* Error */
+.msg-box.error {
+  background: #ffe8e8;
+  color: #b30000;
+  border-left-color: #b30000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -4,13 +4,14 @@ import useFetch from "./useFetch";
 import Book from "./book";
 import Categories from "./Categories";
 import "../css/home.css";
+import useFetchSupabase from "../SupabaseClient";
 
 function Home() {
   const {
     data: booksData,
     isPending: loading,
     error,
-  } = useFetch("http://localhost:8000/books");
+  } = useFetchSupabase("books");
   const heroRef = useRef(null);
 
   // Shuffle books array for random display
@@ -136,7 +137,7 @@ function Home() {
             {books &&
               books
                 .slice(0, 3)
-                .map((b) => <img key={b.id} src={b.coverImage} alt="" />)}
+                .map((b) => <img key={b.id} src={b.coverimage} alt="" />)}
           </div>
         </div>
 
@@ -153,7 +154,7 @@ function Home() {
             {books?.slice(0, 4).map((book) => (
               <div key={book.id} className="book-card fade-item">
                 <Link to={`/books/${book.id}`}>
-                  <img src={book.coverImage} alt={book.title} />
+                  <img src={book.coverimage} alt={book.title} />
                   <h3>{book.title}</h3>
                   <p>{book.author}</p>
                 </Link>

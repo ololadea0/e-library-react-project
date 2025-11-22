@@ -5,15 +5,12 @@ import SearchBar from "./SearchBar";
 import "swiper/css";
 import useFetch from "./useFetch";
 import Book from "./book";
+import useFetchSupabase from "../SupabaseClient";
 
 // import Books from "./book";
 
 export default function Library() {
-  const {
-    data: booksData,
-    isPending,
-    error,
-  } = useFetch("http://localhost:8000/books/");
+  const { data: booksData, isPending, error } = useFetchSupabase("books");
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBooks, setFilteredBooks] = useState([]);

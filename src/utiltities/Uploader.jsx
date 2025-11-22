@@ -1,9 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
 export const UploadPdf = async (file) => {
-  const supabaseUrl = "https://cdmaoihjiqltclcvrrmm.supabase.co";
-  const supabaseAnonKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkbWFvaWhqaXFsdGNsY3Zycm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4Mzc3MzUsImV4cCI6MjA3NzQxMzczNX0.EfgvE_ROpQOMX_wv0f2qS5hd9u2H8VSmf2E88UP8Tqw";
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
@@ -41,9 +40,6 @@ export const uploadImageTwo = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
   formData.append("upload_preset", uploadPreset);
-
-  // const isPDF = file.type === "application/pdf";
-  // const resourceType = isPDF ? "raw" : "image";
 
   const response = await fetch(
     `https://api.cloudinary.com/v1_1/${cloudName}/upload`,

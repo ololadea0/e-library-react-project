@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
+import { createClient } from "@supabase/supabase-js";
+import Message from "./Message";
+import useMessage from "./UseMessage";
 
+const SUPABASE_URL = window.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const EditBook = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -10,25 +17,32 @@ const EditBook = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  const [coverImage, setCoverImage] = useState("");
-  const [fileUrl, setFileUrl] = useState("");
+  const [coverimage, setCoverImage] = useState("");
+  const [fileurl, setFileUrl] = useState("");
+  const { message, type, showMessage } = useMessage();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/books/${id}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch book");
-        return res.json();
-      })
-      .then((data) => {
+    const fetchBook = async () => {
+      try {
+        const { data, error: fetchError } = await supabase
+          .from("books")
+          .select("*")
+          .eq("id", id)
+          .single();
+
+        if (fetchError) throw fetchError;
+
         setBook(data);
-        setCoverImage(data.coverImage || "");
-        setFileUrl(data.fileUrl || "");
+        setCoverImage(data.coverimage || "");
+        setFileUrl(data.fileurl || "");
         setIsPending(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         setError(err.message);
         setIsPending(false);
-      });
+      }
+    };
+
+    fetchBook();
   }, [id]);
 
   const handleChange = (e) => {
@@ -70,30 +84,33 @@ const EditBook = () => {
     setIsPending(true);
     const uploadedUrl = await UploadPdf(file);
     if (uploadedUrl) {
-      setBook((prev) => ({ ...prev, fileUrl: uploadedUrl }));
+      setBook((prev) => ({ ...prev, fileurl: uploadedUrl }));
     }
     setIsPending(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsPending(true);
 
-    fetch(`http://localhost:8000/books/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(book),
-    })
-      .then(() => {
-        setIsPending(false);
-        navigate("/admin"); // back to admin dashboard or book list
-      })
-      .catch((err) => {
-        console.error("Error updating book:", err);
-        setIsPending(false);
-      });
-  };
+    try {
+      const { error: updateError } = await supabase
+        .from("books")
+        .update(book)
+        .eq("id", id);
 
+      if (updateError) throw updateError;
+
+      setIsPending(false);
+      showMessage("Book updated successfully", "success");
+
+      navigate("/admin");
+    } catch (err) {
+      console.error("Error updating book:", err);
+      showMessage("Failed to update book", "error");
+      setIsPending(false);
+    }
+  };
   if (isPending && !book) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
 
@@ -206,7 +223,7 @@ const EditBook = () => {
         <label>Detailed Description</label>
         <textarea
           name="description"
-          value={book.longDescription}
+          value={book.longdescription}
           onChange={handleChange}
           placeholder="Description"
           required
@@ -216,7 +233,7 @@ const EditBook = () => {
           <label>Cover Image:</label>
           {book.coverImage && (
             <img
-              src={book.coverImage}
+              src={book.coverimage}
               alt="Current cover"
               style={{
                 width: "120px",
@@ -230,10 +247,10 @@ const EditBook = () => {
 
         <div>
           <label>Book File (PDF):</label>
-          {book.fileUrl && (
+          {book.fileurl && (
             <p>
               Current file:{" "}
-              <a href={book.fileUrl} target="_blank" rel="noreferrer">
+              <a href={book.fileurl} target="_blank" rel="noreferrer">
                 View PDF
               </a>
             </p>
@@ -248,6 +265,9 @@ const EditBook = () => {
         {!isPending && <button type="submit">Save Changes</button>}
         {isPending && <button disabled>Saving...</button>}
       </form>
+      <div>
+        <Message message={message} type={type} />
+      </div>
     </div>
   );
 };

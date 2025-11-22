@@ -2,14 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
+import Message from "./Message";
+import useMessage from "./UseMessage";
+import { createClient } from "@supabase/supabase-js";
 
 const CreateBook = () => {
-  //   const navigate = Navigate();
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
-  const [longDescription, setLongDescription] = useState("");
+  const [longdescription, setLongDescription] = useState("");
   const [category, setCategory] = useState("Tafsir");
   const [language, setLanguage] = useState(["English"]);
   const [coverImageFile, setCoverImage] = useState(null);
@@ -18,7 +19,12 @@ const CreateBook = () => {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
+  const SUPABASE_URL = window.env.SUPABASE_URL;
+  const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const { message, type, showMessage } = useMessage();
 
   const coverPreview = coverImageFile
     ? URL.createObjectURL(coverImageFile)
@@ -47,26 +53,27 @@ const CreateBook = () => {
         title,
         author,
         description,
-        longDescription,
+        longdescription,
         category,
         language,
-        coverImage: imageUrl,
-        fileUrl: pdfUrl,
+        coverimage: imageUrl,
+        fileurl: pdfUrl,
       };
 
-      fetch("http://localhost:8000/books/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newBook),
-      });
+      const { data, error: insertError } = await supabase
+        .from("books")
+        .insert([newBook]);
+
+      if (insertError) throw insertError;
     } catch (err) {
       setIsPending(false);
       setError(err.message || "Upload failed");
+      showMessage("Failed to add book", "error");
       console.error("Error uploading book:", err);
     } finally {
       setIsPending(false);
-      navigate("/admin");
-      alert("Book uploaded successfully!");
+      // navigate("/admin");
+      showMessage("Book added successfully", "success");
       setTitle("");
       setAuthor("");
       setDescription("");
@@ -183,7 +190,7 @@ const CreateBook = () => {
 
         <label>Detailed Description</label>
         <textarea
-          value={longDescription}
+          value={longdescription}
           required
           onChange={(e) => setLongDescription(e.target.value)}
         ></textarea>
@@ -215,6 +222,9 @@ const CreateBook = () => {
         {isPending && <div className="loading">Uploading book...</div>}
         {error && <div className="error">Error: {error}</div>}
       </form>
+      <div>
+        <Message message={message} type={type} />
+      </div>
     </div>
   );
 };

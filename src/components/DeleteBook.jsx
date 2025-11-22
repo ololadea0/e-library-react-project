@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import useFetch from "./useFetch";
+import useFetchSupabase from "../SupabaseClient";
+import Message from "./Message";
+import useMessage from "./UseMessage";
+import { createClient } from "@supabase/supabase-js";
 
 const DeleteBook = () => {
-  const {
-    data: books,
-    isPending,
-    error,
-  } = useFetch("http://localhost:8000/books");
+  const { data: books, isPending, error } = useFetchSupabase("books");
   const [localBooks, setLocalBooks] = useState([]);
+  const { message, type, showMessage } = useMessage();
+
+  const SUPABASE_URL = window.env.SUPABASE_URL;
+  const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   // Keep local copy synced with fetched books
   useEffect(() => {
@@ -22,16 +27,18 @@ const DeleteBook = () => {
 
     const targetId = String(id);
     try {
-      const res = await fetch(`http://localhost:8000/books/${targetId}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      });
+      const { error: deleteError } = await supabase
+        .from("books")
+        .delete()
+        .eq("id", targetId);
 
-      if (!res.ok) {
-        throw new Error(`Failed to delete book (status ${res.status})`);
+      if (deleteError) {
+        showMessage("Failed to delete book", "error");
+        throw deleteError;
       }
 
       console.log("Book deleted successfully");
+      showMessage("Book deleted successfully", "success");
 
       // update local state so UI syncs instantly
       setLocalBooks((prev) => prev.filter((b) => b.id !== id));
@@ -56,6 +63,9 @@ const DeleteBook = () => {
                 <strong>{book.title}</strong> by {book.author}
               </div>
               <button onClick={() => handleDelete(book.id)}>Delete</button>
+              <div>
+                <Message message={message} type={type} />
+              </div>
             </li>
           ))}
         </ul>

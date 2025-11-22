@@ -2,13 +2,10 @@ import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import { Link } from "react-router-dom";
 import "../css/bookDetails.css";
+import useFetchSupabase from "../SupabaseClient";
 function BookDetails() {
   const { id } = useParams();
-  const {
-    data: books,
-    isPending,
-    error,
-  } = useFetch("http://localhost:8000/books/");
+  const { data: books, isPending, error } = useFetchSupabase("books");
 
   if (!books) return <div className="loading">Loading...</div>;
 
@@ -42,7 +39,7 @@ function BookDetails() {
       <section className="book-details">
         <div className="book-main-info">
           <div className="cover-image">
-            <img src={book.coverImage} alt={book.title} />
+            <img src={book.coverimage} alt={book.title} />
           </div>
           <div className="book-info">
             <div className="info-text">
@@ -54,27 +51,27 @@ function BookDetails() {
                 <strong className="details-bold">Category:</strong>{" "}
                 {book.category}
               </p>
-              <p className="description">{book.longDescription}</p>
+              <p className="description">{book.longdescription}</p>
             </div>
             <div className="info-buttons">
               <a
-                href={book.fileUrl}
+                href={book.fileurl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="read-btn"
               >
                 Read Online
               </a>
-              <a href={book.fileUrl} download className="download-btn">
+              <a href={book.fileurl} download className="download-btn">
                 Download PDF
               </a>
             </div>
           </div>
         </div>
         {/* <div className="book-pdf-viewer">
-          {book.fileUrl && (
+          {book.fileurl && (
             <iframe
-              src={book.fileUrl}
+              src={book.fileurl}
               width="70%"
               height="500px"
               style={{
@@ -95,7 +92,7 @@ function BookDetails() {
               <Link to={`/books/${b.id}`} key={b.id}>
                 <img
                   className="related-img-cover"
-                  src={b.coverImage}
+                  src={b.coverimage}
                   alt={b.title}
                 />
                 <h4 className="related-title">{b.title}</h4>

@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
 import AdminBookList from "../components/AdminBookList";
 import { useNavigate } from "react-router-dom";
+import useFetchSupabase from "../SupabaseClient";
 
 const Edit = () => {
-  const [books, setBooks] = useState([]);
-  const [isLoading, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const { data, isPending, error: fetchError } = useFetchSupabase("books");
+  const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:8000/books")
-      .then((res) => res.json())
-      .then((data) => {
-        setBooks(data);
-        setIsPending(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setIsPending(false);
-        console.error("Error fetching books:", err);
-      });
-  }, []);
+    if (fetchError) {
+      setError(fetchError);
+      setIsLoading(false);
+    } else if (!isPending && data) {
+      setBooks(data);
+      setIsLoading(false);
+    }
+  }, [data, isPending, fetchError]);
 
   const handleEdit = (id) => {
     navigate(`/admin/edit/${id}`);
