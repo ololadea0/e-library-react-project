@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://ololadea0.github.io/e-library-react-project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +12,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://ololadea0.github.io/e-library-react-project",
   "dependencies": {
     "@supabase/supabase-js": "^2.84.0",
     "@uploadthing/react": "^7.3.3",

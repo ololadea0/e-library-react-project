@@ -3,15 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Page Not Found</title>
-    <script>
-      // Redirect everything to index.html
-      window.location.replace("/e-library-react-project/index.html");
+    <script type="text/javascript">
+      // Redirect all unknown URLs to index.html while keeping the path
+      var redirect = "/e-library-react-project/index.html";
+      var path =
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+      window.location.replace(redirect + path);
     </script>
   </head>
   <body>
     <p>
-      If you are not redirected,
-      <a href="/e-library-react-project/index.html">click here</a>.
+      Redirecting...
+      <a href="/e-library-react-project/index.html"
+        >Click here if not redirected</a
+      >
     </p>
   </body>
 </html>
