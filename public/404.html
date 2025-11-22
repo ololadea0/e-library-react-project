@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL='/e-library-react-project/'" />
+    <meta charset="utf-8" />
+    <script>
+      // Redirect to the correct client-side route
+      const redirectUrl = window.location.pathname.replace(
+        "/e-library-react-project",
+        ""
+      );
+      window.location.replace("/e-library-react-project" + redirectUrl);
+    </script>
   </head>
   <body></body>
 </html>
