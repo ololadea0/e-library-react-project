@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./css/fonts.css";
 import "./css/style.css";
 import { useEffect } from "react";
@@ -50,7 +50,7 @@ function App() {
       <Navbar />
 
       {/* Routes */}
-      <HashRouter>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/library" element={<Library />} />
         <Route path="/books/:id" element={<BookDetails />} />
@@ -63,7 +63,7 @@ function App() {
         <Route path="/admin/edit/:id" element={<EditBook />} />
         <Route path="/admin/deletebook" element={<DeleteBook />} />
         <Route path="/library/category/:name" element={<CategoryPage />} />
-      </HashRouter>
+      </Routes>
 
       {/* Footer */}
       <Footer />
