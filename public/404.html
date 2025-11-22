@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // Redirect to the correct client-side route
-      const redirectUrl = window.location.pathname.replace(
-        "/e-library-react-project",
-        ""
-      );
-      window.location.replace("/e-library-react-project" + redirectUrl);
+      // Preserve the user’s URL and redirect into the React app
+      const current = window.location.pathname;
+      const base = "/e-library-react-project";
+
+      // Remove base if GitHub already added it
+      const stripped = current.startsWith(base)
+        ? current.slice(base.length)
+        : current;
+
+      window.location.replace(base + stripped);
     </script>
   </head>
   <body></body>
