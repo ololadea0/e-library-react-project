@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/e-library-react-project/" />
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // Preserve the path and redirect to index.html with it
+      var redirect = window.location.pathname.replace(
+        "/e-library-react-project",
+        ""
+      );
+      window.location.replace(
+        "/e-library-react-project/index.html#" + redirect
+      );
+    </script>
   </head>
   <body></body>
 </html>
