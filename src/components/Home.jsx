@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import useFetch from "./useFetch";
-import Book from "./book";
+
 import Categories from "./Categories";
 import "../css/home.css";
 import useFetchSupabase from "../SupabaseClient";

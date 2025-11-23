@@ -1,5 +1,3 @@
-import React from "react";
-import { useEffect } from "react";
 import "../css/fonts.css";
 import {
   FaBookOpen,

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
 
 export default function Footer() {
   const year = new Date().getFullYear();

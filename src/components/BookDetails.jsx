@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+
 import { Link } from "react-router-dom";
 import "../css/bookDetails.css";
 import useFetchSupabase from "../SupabaseClient";
@@ -50,6 +50,10 @@ function BookDetails() {
               <p className="category">
                 <strong className="details-bold">Category:</strong>{" "}
                 {book.category}
+              </p>
+              <p className="category">
+                <strong className="details-bold">Language:</strong>{" "}
+                {book.language}
               </p>
               <p className="description">{book.longdescription}</p>
             </div>

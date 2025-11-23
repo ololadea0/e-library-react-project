@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useFetch from "./useFetch";
+
 import useFetchSupabase from "../SupabaseClient";
 import Message from "./Message";
 import useMessage from "./UseMessage";

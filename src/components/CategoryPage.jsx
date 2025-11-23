@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+
 import Book from "./book";
 import "../css/categoriesPage.css";
 import useFetchSupabase from "../SupabaseClient";

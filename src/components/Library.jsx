@@ -3,7 +3,7 @@ import Categories from "./Categories";
 import "../css/library.css";
 import SearchBar from "./SearchBar";
 import "swiper/css";
-import useFetch from "./useFetch";
+
 import Book from "./book";
 import useFetchSupabase from "../SupabaseClient";
 
