@@ -50,21 +50,20 @@ function App() {
       <Navbar />
 
       {/* Routes */}
-      <Router basename="/e-library-react-project">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/library" element={<Library />} />
-          <Route path="/books/:id" element={<BookDetails />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/createbook" element={<CreateBook />} />
-          <Route path="/admin/edit" element={<Edit />} />
-          <Route path="/admin/edit/:id" element={<EditBook />} />
-          <Route path="/admin/deletebook" element={<DeleteBook />} />
-          <Route path="/library/category/:name" element={<CategoryPage />} />
-        </Routes>
-      </Router>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/books/:id" element={<BookDetails />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/admin/createbook" element={<CreateBook />} />
+        <Route path="/admin/edit" element={<Edit />} />
+        <Route path="/admin/edit/:id" element={<EditBook />} />
+        <Route path="/admin/deletebook" element={<DeleteBook />} />
+        <Route path="/library/category/:name" element={<CategoryPage />} />
+      </Routes>
 
       {/* Footer */}
       <Footer />
