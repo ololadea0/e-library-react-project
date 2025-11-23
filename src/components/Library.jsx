@@ -68,6 +68,11 @@ export default function Library() {
       window.removeEventListener("scroll", fadeItemsOnScroll);
     };
   }, []);
+  if (isPending) return <div className="loading">Loading...</div>;
+  if (error)
+    return (
+      <div className="error-state">Error loading books. Please try again.</div>
+    );
 
   return (
     <div className="library-page">

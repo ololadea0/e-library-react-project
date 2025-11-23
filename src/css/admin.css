@@ -3,7 +3,7 @@
 .create-book,
 .delete-book,
 .edit-page {
-  margin: 100px auto 30px;
+  margin: 100px 20px 30px;
 }
 .admin-links {
   display: flex;

@@ -89,7 +89,7 @@ function BookDetails() {
         {relatedBooks.length > 0 ? (
           <div className="related-grid">
             {relatedBooks.map((b) => (
-              <Link to={`/books/${b.id}`} key={b.id}>
+              <Link to={`/library/books/${b.id}`} key={b.id}>
                 <img
                   className="related-img-cover"
                   src={b.coverimage}

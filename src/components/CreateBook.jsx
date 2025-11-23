@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
 import Message from "./Message";
 import useMessage from "./UseMessage";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./supabaseClient";
 
 const CreateBook = () => {
   const [title, setTitle] = useState("");
@@ -18,11 +18,6 @@ const CreateBook = () => {
 
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-
-  const SUPABASE_URL = window.env.SUPABASE_URL;
-  const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
-
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   const { message, type, showMessage } = useMessage();
 

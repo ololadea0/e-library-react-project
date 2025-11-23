@@ -54,7 +54,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/library" element={<Library />} />
-        <Route path="/books/:id" element={<BookDetails />} />
+        <Route path="/library/category/:name" element={<CategoryPage />} />
+        <Route path="/library/books/:id" element={<BookDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<AdminPanel />} />
@@ -62,7 +63,6 @@ function App() {
         <Route path="/admin/edit" element={<Edit />} />
         <Route path="/admin/edit/:id" element={<EditBook />} />
         <Route path="/admin/deletebook" element={<DeleteBook />} />
-        <Route path="/library/category/:name" element={<CategoryPage />} />
       </Routes>
 
       {/* Footer */}

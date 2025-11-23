@@ -54,7 +54,7 @@ const Book = ({ books, isPending, error, title }) => {
       <div className="books-grid">
         {books.map((book) => (
           <div className="book-card fade-item" key={book.id}>
-            <Link to={`/books/${book.id}`}>
+            <Link to={`/library/books/${book.id}`}>
               <img src={book.coverimage} alt={book.title} />
               <h3>{book.title}</h3>
               <h4> {book.author}</h4>

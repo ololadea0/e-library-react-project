@@ -3,16 +3,12 @@ import useFetch from "./useFetch";
 import useFetchSupabase from "../SupabaseClient";
 import Message from "./Message";
 import useMessage from "./UseMessage";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./supabaseClient";
 
 const DeleteBook = () => {
   const { data: books, isPending, error } = useFetchSupabase("books");
   const [localBooks, setLocalBooks] = useState([]);
   const { message, type, showMessage } = useMessage();
-
-  const SUPABASE_URL = window.env.SUPABASE_URL;
-  const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   // Keep local copy synced with fetched books
   useEffect(() => {
@@ -63,11 +59,11 @@ const DeleteBook = () => {
                 <strong>{book.title}</strong> by {book.author}
               </div>
               <button onClick={() => handleDelete(book.id)}>Delete</button>
-              <div>
-                <Message message={message} type={type} />
-              </div>
             </li>
           ))}
+          <div>
+            <Message message={message} type={type} />
+          </div>
         </ul>
       )}
     </div>

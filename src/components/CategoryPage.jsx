@@ -9,8 +9,6 @@ const CategoryPage = () => {
   const { data: books, isPending, error } = useFetchSupabase("books");
   const filteredBooks = books?.filter((book) => book.category === name);
 
-  console.log("Filtered Books:", filteredBooks);
-
   if (isPending) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">Error: {error}</div>;
 

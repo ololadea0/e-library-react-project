@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./supabaseClient";
 import Message from "./Message";
 import useMessage from "./UseMessage";
 
-const SUPABASE_URL = window.env.SUPABASE_URL;
-const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const EditBook = () => {
   const { id } = useParams();
   const navigate = useNavigate();

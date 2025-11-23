@@ -153,7 +153,7 @@ function Home() {
           <div className="books-grid">
             {books?.slice(0, 4).map((book) => (
               <div key={book.id} className="book-card fade-item">
-                <Link to={`/books/${book.id}`}>
+                <Link to={`/library/books/${book.id}`}>
                   <img src={book.coverimage} alt={book.title} />
                   <h3>{book.title}</h3>
                   <p>{book.author}</p>
