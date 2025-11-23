@@ -67,12 +67,6 @@ const Navbar = () => {
         >
           Contact
         </NavLink>
-        <NavLink
-          to="/admin"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          Admin
-        </NavLink>
       </nav>
     </header>
   );
