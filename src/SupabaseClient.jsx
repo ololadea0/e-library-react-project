@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
 
-const SUPABASE_URL = window.env.SUPABASE_URL;
-const SUPABASE_ANON_KEY = window.env.SUPABASE_ANON_KEY;
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+import { supabase } from "./components/supabaseClient";
 
 const useFetchSupabase = (tableName) => {
   const [data, setData] = useState(null);

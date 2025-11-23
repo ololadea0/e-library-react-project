@@ -1,11 +1,6 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../components/supabaseClient";
 
 export const UploadPdf = async (file) => {
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-  const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
   try {
     const filePath = `pdfs/${Date.now()}_${file.name}`;
 
