@@ -90,16 +90,17 @@ const EditBook = () => {
     setIsPending(true);
 
     try {
+      const languageArray = `{${book.language.join(",")}}`;
+
       const { error: updateError } = await supabase
         .from("books")
-        .update(book)
+        .update({ ...book, language: languageArray })
         .eq("id", id);
 
       if (updateError) throw updateError;
 
       setIsPending(false);
       showMessage("Book updated successfully", "success");
-
       navigate("/admin");
     } catch (err) {
       console.error("Error updating book:", err);

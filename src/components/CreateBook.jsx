@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
 import Message from "./Message";
 import useMessage from "./UseMessage";
@@ -54,10 +53,10 @@ const CreateBook = () => {
         coverimage: imageUrl,
         fileurl: pdfUrl,
       };
-
+      const languageArray = `{${newBook.language.join(",")}}`;
       const { data, error: insertError } = await supabase
         .from("books")
-        .insert([newBook]);
+        .insert([{ ...newBook, language: languageArray }]);
 
       if (insertError) throw insertError;
     } catch (err) {
