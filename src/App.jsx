@@ -45,29 +45,29 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <Router>
       {/* Simple Navbar */}
       <Navbar />
 
       {/* Routes */}
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/library" element={<Library />} />
-          <Route path="/library/category/:name" element={<CategoryPage />} />
-          <Route path="/library/books/:id" element={<BookDetails />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/createbook" element={<CreateBook />} />
-          <Route path="/admin/edit" element={<Edit />} />
-          <Route path="/admin/edit/:id" element={<EditBook />} />
-          <Route path="/admin/deletebook" element={<DeleteBook />} />
-        </Routes>
-      </Router>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/library/category/:name" element={<CategoryPage />} />
+        <Route path="/library/books/:id" element={<BookDetails />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/admin/createbook" element={<CreateBook />} />
+        <Route path="/admin/edit" element={<Edit />} />
+        <Route path="/admin/edit/:id" element={<EditBook />} />
+        <Route path="/admin/deletebook" element={<DeleteBook />} />
+      </Routes>
+
       {/* Footer */}
       <Footer />
-    </div>
+    </Router>
   );
 }
 
