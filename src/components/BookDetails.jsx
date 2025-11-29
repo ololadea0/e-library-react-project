@@ -45,14 +45,14 @@ function BookDetails() {
             <div className="info-text">
               <h2>{book.title}</h2>
               <p className="author">
-                <strong className="details-bold">Author:</strong> {book.author}
+                <strong className="details-bold">Author: </strong> {book.author}
               </p>
               <p className="category">
-                <strong className="details-bold">Category:</strong>
+                <strong className="details-bold">Category: </strong>
                 {book.category}
               </p>
               <p className="category">
-                <strong className="details-bold">Language:</strong>
+                <strong className="details-bold">Language: </strong>
                 {book.language}
               </p>
               <p className="description">{book.longdescription}</p>
