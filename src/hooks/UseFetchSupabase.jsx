@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { supabase } from "./components/supabaseClient";
+import { supabase } from "./supabaseClient";
 
 const useFetchSupabase = (tableName) => {
   const [data, setData] = useState(null);

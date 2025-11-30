@@ -1,4 +1,4 @@
-import { supabase } from "../components/supabaseClient";
+import { supabase } from "./supabaseClient";
 
 export const UploadPdf = async (file) => {
   try {
