@@ -35,6 +35,7 @@ const EditBook = () => {
       } catch (err) {
         setError(err.message);
         setIsPending(false);
+        showMessage("Failed to load book data", "error");
       }
     };
 
@@ -108,6 +109,7 @@ const EditBook = () => {
       setIsPending(false);
     }
   };
+
   if (isPending && !book) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
 

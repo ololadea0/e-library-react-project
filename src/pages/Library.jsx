@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Categories from "../components/SearchBar";
+import Categories from "../components/Categories";
 import "../css/library.css";
 import SearchBar from "../components/SearchBar";
 import "swiper/css";
