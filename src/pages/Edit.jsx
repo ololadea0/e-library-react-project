@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AdminBookList from "../components/AdminBookList";
 import { useNavigate } from "react-router-dom";
-import useFetchSupabase from "../SupabaseClient";
+import useFetchSupabase from "../hooks/UseFetchSupabase";
 
 const Edit = () => {
   const navigate = useNavigate();

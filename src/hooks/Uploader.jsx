@@ -23,7 +23,7 @@ export const UploadPdf = async (file) => {
 
     return publicData?.publicUrl || null;
   } catch (err) {
-    cconsole.error("Unexpected error during upload:", err);
+    console.error("Unexpected error during upload:", err);
     return null;
   }
 };

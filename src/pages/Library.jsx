@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Categories from "./Categories";
+import Categories from "../components/SearchBar";
 import "../css/library.css";
-import SearchBar from "./SearchBar";
+import SearchBar from "../components/SearchBar";
 import "swiper/css";
-
-import Book from "./book";
-import useFetchSupabase from "../SupabaseClient";
-
-// import Books from "./book";
+import Book from "../components/Books";
+import useFetchSupabase from "../hooks/UseFetchSupabase";
 
 export default function Library() {
   const { data: booksData, isPending, error } = useFetchSupabase("books");

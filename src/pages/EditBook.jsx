@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
-import { supabase } from "./supabaseClient";
-import Message from "./Message";
-import useMessage from "./UseMessage";
+import { UploadPdf, uploadImageTwo } from "../hooks/Uploader";
+import { supabase } from "../hooks/supabaseClient";
+import Message from "../components/Message";
+import useMessage from "../hooks/UseMessage";
 
 const EditBook = () => {
   const { id } = useParams();

@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { UploadPdf, uploadImageTwo } from "../utiltities/Uploader";
-import Message from "./Message";
-import useMessage from "./UseMessage";
-import { supabase } from "./supabaseClient";
+import { UploadPdf, uploadImageTwo } from "../hooks/Uploader";
+import Message from "../components/Message";
+import useMessage from "../hooks/UseMessage";
+import { supabase } from "../hooks/supabaseClient";
 
 const CreateBook = () => {
   const [title, setTitle] = useState("");

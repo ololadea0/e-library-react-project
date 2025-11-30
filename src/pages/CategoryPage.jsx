@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
-
-import Book from "./book";
+import Book from "../components/Books";
 import "../css/categoriesPage.css";
-import useFetchSupabase from "../SupabaseClient";
+import useFetchSupabase from "../hooks/UseFetchSupabase";
 
 const CategoryPage = () => {
   const { name } = useParams();

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-import useFetchSupabase from "../SupabaseClient";
-import Message from "./Message";
-import useMessage from "./UseMessage";
-import { supabase } from "./supabaseClient";
+import useFetchSupabase from "../hooks/UseFetchSupabase";
+import Message from "../components/Message";
+import useMessage from "../hooks/UseMessage";
+import { supabase } from "../hooks/supabaseClient";
 
 const DeleteBook = () => {
   const { data: books, isPending, error } = useFetchSupabase("books");

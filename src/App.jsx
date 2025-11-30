@@ -2,48 +2,21 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./css/fonts.css";
 import "./css/style.css";
 import { useEffect } from "react";
-import Home from "./components/Home";
-import Library from "./components/Library";
-import BookDetails from "./components/BookDetails";
-import AdminPanel from "./components/AdminPanel";
-import Navbar from "./components/Nav";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "./components/Categories";
-import CategoryPage from "./components/CategoryPage";
-import CreateBook from "./components/CreateBook";
-import EditBook from "./components/EditBook";
-import DeleteBook from "./components/DeleteBook";
-import Edit from "./components/Edit";
+import Navbar from "./components/Nav";
+import Home from "./pages/Home";
+import Library from "./pages/Library";
+import BookDetails from "./pages/BookDetails";
+import AdminPanel from "./pages/AdminPanel";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import CategoryPage from "./pages/CategoryPage";
+import CreateBook from "./pages/CreateBook";
+import EditBook from "./pages/EditBook";
+import DeleteBook from "./pages/DeleteBook";
+import Edit from "./pages/Edit";
 
 function App() {
-  useEffect(() => {
-    const selector = "section, .book, .category-card, .featured-books > *";
-    const elements = Array.from(document.querySelectorAll(selector));
-    if (!elements.length) return;
-
-    const io = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    elements.forEach((el) => {
-      // mark initial state (safe if class already exists)
-      el.classList.add("reveal-init");
-      io.observe(el);
-    });
-
-    return () => io.disconnect();
-  }, []);
-
   return (
     <Router>
       {/* Simple Navbar */}

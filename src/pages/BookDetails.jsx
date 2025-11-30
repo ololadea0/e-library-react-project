@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-
 import { Link } from "react-router-dom";
 import "../css/bookDetails.css";
-import useFetchSupabase from "../SupabaseClient";
+import useFetchSupabase from "../hooks/UseFetchSupabase";
+
 function BookDetails() {
   const { id } = useParams();
   const { data: books, isPending, error } = useFetchSupabase("books");

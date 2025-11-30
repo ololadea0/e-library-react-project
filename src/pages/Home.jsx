@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-import Categories from "./Categories";
+import Categories from "../components/Categories";
 import "../css/home.css";
-import useFetchSupabase from "../SupabaseClient";
+import useFetchSupabase from "../hooks/UseFetchSupabase";
 
 function Home() {
   const {
